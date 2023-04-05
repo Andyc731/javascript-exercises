@@ -6,6 +6,14 @@ const removeFromArray = function(array, ...args) {
             array.splice(removeIndex[i] - 1, 1);
         }
     }
+    for (let i = removeIndex.length - 1; i >= 0; i--) {
+
+        for (let j = array.length - 1; j >= 0; j--) {
+            if (removeIndex[i] === array[j]) {
+                array.splice(j, 1);
+            }
+        }
+    }
     
     return array;
 };
